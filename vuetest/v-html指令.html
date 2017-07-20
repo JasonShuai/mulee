@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">		
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<title>v-html指令用于输出</title>
+	</head>
+	<body>
+		<div id="app">
+			<div v-html="message"></div>
+		</div>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					message:"<p>这是一个段落</p>"
+				}
+			})
+		</script>
+	</body>
+</html>

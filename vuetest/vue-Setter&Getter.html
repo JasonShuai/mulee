@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<title></title>
+		<style>
+			.active{
+				width: 100px;
+				height: 100px;
+				background: green;
+			}
+			.text-danger{
+				background: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div id ="app">
+			<!--<p> {{ site }} </p>-->
+			<div class="static" v-bind:class="{active:isActive,'text-danger':hasError }"></div>
+		</div>
+		<script>
+			/* SETTER AND GETTER
+			var vm = new Vue({
+				el:'#app',
+				data:{
+					name:'Google',
+					url:'http://www.baid.com'				
+				},
+				computed:{
+					site:{
+						//  getter
+						get:function(){
+							return this.name + ' ' + this.url;
+						},
+						//  setter
+						set:function(newValue){
+							var names = newValue.split(' ');
+							this.name = names[0];
+							this.url = names[names.length - 1];
+						}
+					}
+				}
+				
+			})
+			
+			vm.site  = '渣渣渣  http://www.baidu.com';
+			document.write('name：' + vm.name);
+			document.write('<br>');
+			document.write('url:' + vm.url);
+			*/
+			var　vm = new Vue({
+				el:'#app',
+				data:{
+					isActive:true,
+					error:null
+				},
+				computed:{
+					classObject:function(){
+						return{
+							active:this.isActive && !this.error,
+							'text-danger':this.error && this.error.type === 'fatal',
+						}
+					}
+				}
+			})
+			
+		</script>
+	</body>
+</html>

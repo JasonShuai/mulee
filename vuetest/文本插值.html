@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<title>文本插值</title>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{ message }}</p>
+		</div>
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					message:'hellow,Vue.js!'
+				}
+			})
+		</script>
+	</body>
+</html>

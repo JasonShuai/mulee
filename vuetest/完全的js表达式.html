@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<title>完全的javaScript表达式</title>
+	</head>
+	<body>
+		<div id="app">
+			{{5+5}}<br>
+			{{ ok ? "YES":"NO"}}<br>
+			{{ message.split('').reverse().join('')}}
+			<div v-bind:id="'list-' + id">黑椒鸡柳</div>
+		</div>
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					ok:true,
+					message:'RUNLOOP',
+					id:1
+				}
+			})
+		</script>
+	</body>
+</html>
