@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://unpkg.com/vue"></script>
+		<title>声明式渲染</title>
+	</head>
+	<body>
+		<div id="app">
+		<div v-for="colleague in colleagues">{{ colleague.name }}</div>
+		</div>
+		
+		<script>
+			var app = new Vue({
+				el:"#app",
+				data:{
+					message:'hello Vue!',
+					colleagues:[
+						{
+							name:'小鸣',
+							gender:'女',
+							hobby:'swimming'
+						},
+						{
+							name:'小英',
+							gender:'女',
+							hobby:'drawing'
+						}
+					]
+				}
+			})
+		</script>
+	</body>
+	
+</html>
