@@ -6,6 +6,11 @@
 		<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
 	</head>
 	<body>
+		<div id="app">
+			<span>用表达式:vm.a === data.a 绑定vm实例和数据对象的关系, a = {{ a }}</span><br />
+			<button onclick="change()">设置vm.a的值为2</button>
+			<button onclick="change2()">设置data.a的值为3</button>
+		</div>
 	</body>
 	<script>
 		//  数据对象
@@ -13,19 +18,24 @@
 		
 		//  将数据对象设置到vue实例中
 		var vm = new Vue({
+			el:"#app",
 			data:data
 		});
 		
 		// 设置vue实例的属性为数据对象的某个值(绑定关系?不知这样称做行不行)
 		vm.a === data.a;
 		
-		// 1.设置属性也会影响到原始数据
-		vm.a = 2;
-		console.log(data.a); // data.a => 2;
+		function change(){
+			// 1.设置属性也会影响到原始数据
+			vm.a = 2;
+			alert("data.a的值为:" + data.a); // data.a => 2;
+		}
 		
-		// 2.设置原始数据同样影响属性的值
-		data.a = 3;
-		console.log(vm.a); //  vm.a => 3;
+		function change2(){
+			// 2.设置原始数据同样影响属性的值
+			data.a = 3;
+			alert("vm.a的值为:" + vm.a); //  vm.a => 3;
+		}
 		
 	</script>
 	
