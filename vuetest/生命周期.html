@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>生命周期</title>
+		<script src="https://unpkg.com/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+			<div> {{ c }}</div>
+			<button onclick="changec()">修改c的值</button>
+			
+		</div>
+		
+		
+	</body>
+	<script>
+		var vm = new Vue({
+			el:"#app",
+			data:{
+				a:"1",
+				b:"2",
+				c:"3",
+				d:"4"
+			},
+			//  vue实例创建的时候调用
+			created:function(){
+				console.log("created:" + this.a);
+			},
+			//  dom元素渲染的时候调用
+			mounted:function(){
+				console.log("mounted:" + this.b);
+			},
+			//  数据修改之后会调用
+			beforeUpdate:function(){
+				console.log("beforeUpdated:" + this.c);
+			},
+			//  视图上更新了会调用
+			updated:function(){
+				console.log("updated:" + this.c);
+			},
+			//  页面销毁的时候调用
+			destroyed:function(){
+				console.log("destroyed:" + this.d);
+			}
+		})
+		function changec(){
+			vm.c = 8;
+		}
+	</script>
+</html>
