@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: 1px solid rgb(192, 192, 192);
+  height: 200px
 }
 
 .userinfo-avatar {
@@ -15,7 +17,10 @@
 .userinfo-nickname {
   color: #aaa;
 }
-
-.usermotto {
-  margin-top: 200px;
+.menurow{
+  border-bottom: 1px solid rgb(192, 192, 192);
+  color: rgb(162, 162, 162);
+  padding-left: 20px;
+  height: 40px;
+  line-height: 40px;
 }
